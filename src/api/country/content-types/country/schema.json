@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "singularName": "country",
+    "pluralName": "countries",
+    "displayName": "country"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "uid"
+    },
+    "Widgets": {
+      "type": "dynamiczone",
+      "components": [
+        "carousalbanners.banner-2",
+        "carousalbanners.banner"
+      ]
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand",
+      "mappedBy": "country"
+    }
+  }
+}

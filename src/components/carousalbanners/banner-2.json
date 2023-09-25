@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_carousalbanners_banner_2s",
+  "info": {
+    "displayName": "banner 2"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
