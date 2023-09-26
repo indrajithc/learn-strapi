@@ -10,12 +10,23 @@
     "draftAndPublish": false,
     "comment": ""
   },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 40
     },
     "isDone": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
