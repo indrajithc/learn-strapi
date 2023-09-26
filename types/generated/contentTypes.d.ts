@@ -492,9 +492,21 @@ export interface PluginTodoTodo extends Schema.CollectionType {
     draftAndPublish: false;
     comment: '';
   };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    isDone: Attribute.Boolean;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
