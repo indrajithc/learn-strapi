@@ -18,6 +18,8 @@ import { Button } from "@strapi/design-system";
 import { Plus } from "@strapi/icons";
 import { Illo } from "../../components/Illo";
 
+import TodoModal from "../../components/TodoModal";
+
  
 
 const HomePage = () => {
@@ -25,6 +27,9 @@ const HomePage = () => {
   const [todoData, setTodoData] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
+  async function addTodo(data) {
+    setTodoData([...todoData, { ...data, id: nanoid(), isDone: false }]);
+  }
 
   return (
     <Layout>
@@ -52,6 +57,14 @@ const HomePage = () => {
         <p> Count and Table</p>
        }
       </ContentLayout>
+      {
+        showModal? (
+          <TodoModal
+           setShowModal={setShowModal}
+           addTo ={addTodo}
+          />
+        ):""
+      }
     </Layout>
   );
 };
