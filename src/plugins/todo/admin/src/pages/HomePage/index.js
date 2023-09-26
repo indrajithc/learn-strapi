@@ -14,6 +14,7 @@ import {
 
 
 import { EmptyStateLayout } from "@strapi/design-system";
+import { nanoid } from "nanoid";
 import { Button } from "@strapi/design-system";
 import { Plus } from "@strapi/icons";
 import { Illo } from "../../components/Illo";
@@ -61,7 +62,7 @@ const HomePage = () => {
         showModal? (
           <TodoModal
            setShowModal={setShowModal}
-           addTo ={addTodo}
+           addTodo={addTodo}
           />
         ):""
       }
