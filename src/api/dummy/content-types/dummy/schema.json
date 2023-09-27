@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dummies",
+  "info": {
+    "singularName": "dummy",
+    "pluralName": "dummies",
+    "displayName": "dummy"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "location": {
+      "type": "json"
+    },
+    "json": {
+      "type": "json"
+    }
+  }
+}

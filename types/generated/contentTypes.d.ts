@@ -793,6 +793,37 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   };
 }
 
+export interface ApiDummyDummy extends Schema.CollectionType {
+  collectionName: 'dummies';
+  info: {
+    singularName: 'dummy';
+    pluralName: 'dummies';
+    displayName: 'dummy';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  attributes: {
+    location: Attribute.JSON;
+    json: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dummy.dummy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dummy.dummy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWidgetWidget extends Schema.CollectionType {
   collectionName: 'widgets';
   info: {
@@ -875,6 +906,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::brand.brand': ApiBrandBrand;
       'api::country.country': ApiCountryCountry;
+      'api::dummy.dummy': ApiDummyDummy;
       'api::widget.widget': ApiWidgetWidget;
     }
   }
