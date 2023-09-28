@@ -12,10 +12,17 @@
   },
   "attributes": {
     "location": {
-      "type": "json"
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "pluginOptions": {
+        "map-field": {
+          "enabled": true
+        }
+      }
     },
     "json": {
       "type": "json"
-    }
+    }    
   }
 }
