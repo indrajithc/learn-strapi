@@ -805,7 +805,14 @@ export interface ApiDummyDummy extends Schema.CollectionType {
     comment: '';
   };
   attributes: {
-    location: Attribute.JSON;
+    location: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        'map-field': {
+          enabled: true;
+        };
+      }>;
     json: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
